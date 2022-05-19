@@ -17,7 +17,7 @@ class TasksController < ApplicationController
 
   def destroy
     @task = Task.find_by({ "id" => params["id"] })
-    if @current_user && @task["user_id"] == @current_user["id"]
+    if @task["user_id"] == @current_user["id"]
       @task.destroy
     end
 
